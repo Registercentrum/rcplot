@@ -5,16 +5,15 @@
 \title{ggsave function with default settings as specified with options()}
 \usage{
 rcsave(
-  file = NULL,
+  file,
   plot = ggplot2::last_plot(),
-  width = ifelse(!is.null(options("figure_width")), options("figure_width"), 3.14961),
-  height = ifelse(!is.null(options("figure_height")), options("figure_height"),
-    3.54331),
+  width = getOption("figure_width"),
+  height = getOption("figure_height"),
   units = "in",
-  dpi = ifelse(!is.null(options("figure_dpi")), options("figure_dpi"), 600),
-  device = ifelse(!is.null(options("figure_device")), options("figure_device"), "tiff"),
-  family = ifelse(!is.null(options("figure_family")), options("figure_family"),
-    "Calibri Light")
+  dpi = getOption("figure_dpi"),
+  device = getOption("figure_device"),
+  family = getOption("figure_family"),
+  ...
 )
 }
 \arguments{
@@ -34,6 +33,9 @@ default: options("figure_width")}
 \item{device}{Device to use. Can either be a device function (e.g. png()), or one of "eps", "ps", "tex" (pictex), "pdf", "jpeg", "tiff", "png", "bmp", "svg" or "wmf" (windows only).}
 
 \item{family}{Font family}
+
+\item{...}{additional arguments passed to \code{ggplot2::ggsave} and
+then to the selected \code{device}.}
 }
 \description{
 ggsave function with default settings as specified with options()

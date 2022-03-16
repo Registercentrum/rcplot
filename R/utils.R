@@ -9,6 +9,8 @@
 #' @param dpi Plot resolution.
 #' @param device Device to use. Can either be a device function (e.g. png()), or one of "eps", "ps", "tex" (pictex), "pdf", "jpeg", "tiff", "png", "bmp", "svg" or "wmf" (windows only).
 #' @param family Font family
+#' @param ... additional arguments passed to `ggplot2::ggsave` and
+#'            then to the selected `device`.
 #' @export
 #' @import ggplot2
 #'
