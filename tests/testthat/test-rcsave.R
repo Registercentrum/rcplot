@@ -1,4 +1,5 @@
 test_that("saving png, tiff and pdf works", {
+  scip_on_os(os = "mac")
   op <- options()
 
   plt <-
