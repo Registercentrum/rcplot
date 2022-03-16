@@ -28,22 +28,13 @@
     <loc>/reference/check_attr.html</loc>
   </url>
   <url>
-    <loc>/reference/cnames1.html</loc>
+    <loc>/reference/compass.html</loc>
   </url>
   <url>
-    <loc>/reference/cnames2.html</loc>
+    <loc>/reference/county_names.html</loc>
   </url>
   <url>
-    <loc>/reference/compass_data.html</loc>
-  </url>
-  <url>
-    <loc>/reference/eq_vas_exp.html</loc>
-  </url>
-  <url>
-    <loc>/reference/eq_vas_obs.html</loc>
-  </url>
-  <url>
-    <loc>/reference/eq_vas_riket.html</loc>
+    <loc>/reference/eq_vas.html</loc>
   </url>
   <url>
     <loc>/reference/guide_axis_label_trans.html</loc>
@@ -64,16 +55,7 @@
     <loc>/reference/line_plot.html</loc>
   </url>
   <url>
-    <loc>/reference/norm_compass_data.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pain_exp.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pain_obs.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pain_riket.html</loc>
+    <loc>/reference/pain_vas.html</loc>
   </url>
   <url>
     <loc>/reference/pick_valid.html</loc>
@@ -85,13 +67,10 @@
     <loc>/reference/prom_trends.html</loc>
   </url>
   <url>
-    <loc>/reference/satis_exp.html</loc>
+    <loc>/reference/rcsave.html</loc>
   </url>
   <url>
-    <loc>/reference/satis_obs.html</loc>
-  </url>
-  <url>
-    <loc>/reference/satis_riket.html</loc>
+    <loc>/reference/satisfaction_vas.html</loc>
   </url>
   <url>
     <loc>/reference/size_order.html</loc>
@@ -100,25 +79,7 @@
     <loc>/reference/slr_colors.html</loc>
   </url>
   <url>
-    <loc>/reference/slrsave.html</loc>
-  </url>
-  <url>
-    <loc>/reference/swe.html</loc>
-  </url>
-  <url>
-    <loc>/reference/swe_allpoints.html</loc>
-  </url>
-  <url>
-    <loc>/reference/swe_kommuner.html</loc>
-  </url>
-  <url>
-    <loc>/reference/swe_kommuner_allpoints.html</loc>
-  </url>
-  <url>
-    <loc>/reference/swe_landsting.html</loc>
-  </url>
-  <url>
-    <loc>/reference/swe_landsting_allpoints.html</loc>
+    <loc>/reference/sweden_map.html</loc>
   </url>
   <url>
     <loc>/reference/theme_slr.html</loc>
