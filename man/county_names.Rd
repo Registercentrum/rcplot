@@ -5,6 +5,7 @@
 \alias{county_names}
 \alias{cnames1}
 \alias{cnames2}
+\alias{swe_value_labels}
 \title{Data set used for example purposes (see examples and description in
 swe_landsting)}
 \format{
@@ -18,16 +19,27 @@ have been removed from the original data set:
 
 A data frame with 12 rows and 3 variables.
 The negligible variables have been removed from the original data set:
+
 \describe{
 \item{NAME_1}{name of county, character}
 \item{long}{longitude, numeric}
 \item{lat}{latitude, numeric}
+}
+
+A data frame with 311 rows and 3 variables.
+
+\describe{
+\item{ColumnName}{name of variable, character}
+\item{ValueCode}{ID, character}
+\item{ValueName}{Name, character}
 }
 }
 \usage{
 cnames1
 
 cnames2
+
+swe_value_labels
 }
 \description{
 Data set used for example purposes (see examples and description in
@@ -35,6 +47,8 @@ swe_landsting)
 
 Data set used for example purposes
 (see examples and description in swe_landsting)
+
+Data set used to translate ID code to name
 }
 \examples{
 
@@ -135,6 +149,16 @@ ggplot2::theme(
   legend.justification = c(0,1),
   plot.margin          = ggplot2::margin(0,0,0,0, unit = "cm")
 )
+
+region_names <- dplyr::filter(swe_value_labels, ColumnName == "Region") \%>\%
+dplyr::select(Region = ValueCode, RegionName = ValueName)
+
+df <- left_join(
+  swe_coords_municipality,
+  region_names,
+  by = c("Region")
+)
+
 }
 \keyword{county}
 \keyword{landsting}
