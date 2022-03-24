@@ -10,17 +10,13 @@
 A data frame with 11488 rows and 9 variables. This is a filtered
 version of swe_kommuner_allpoints where all points with piece equal to "3"
 or larger are removed (small details) and only every thirtieth point being
-used (see examples).
+used (see examples):
 \describe{
 \item{long}{longitude, numeric}
 \item{lat}{latitude, numeric}
-\item{order}{specifies the order for each
-point, integer}
-\item{piece}{"1" for the most essential, "2" and more for
-detailed points, factor}
-\item{group}{Each region or island in the map is a
-polygon where each level in this variable
-is a polygon, factor}
+\item{order}{specifies the order for each point, integer}
+\item{piece}{"1" for the most essential, "2" and more for detailed points, factor}
+\item{group}{Each region or island in the map is a polygon where each level in this variable is a polygon, factor}
 \item{Region}{id of county, integer}
 \item{Kommun}{id of township, integer}
 }
@@ -29,23 +25,14 @@ A data frame with 7,791 rows and 19 variables. This is a filtered
 version of swe_landsting_allpoints where all points with piece equal to "3"
 or larger are removed (small details) and only every thirtieth point being
 used (see examples). Also some example variables are included for example
-purposes, calculated for 2016 annual report.
-
+purposes, calculated for 2016 annual report:
 \describe{
-\item{long          }{longitude, numeric}
-\item{lat           }{latitude, numeric}
-\item{order         }{specifies the order for each point, integer}
-\item{piece         }{"1" for the most essential, "2" and more for
-detailed points (Öland, Orust, and Tjörn included
-in "2"), factor}
-\item{group         }{Each region or island in the map is a polygon where
-\item{Region        }{id of county, character}
-}
-\itemize{
-\item Factor variable with 3 levels for counties compared to the interval
-\eqn{(\mu - \sigma, \mu + \sigma} where \eqn{\mu} and \eqn{\sigma} are the
-mean and standard deviation for whole Sweden:
-bad (below the interval), average (within) and good (above).
+\item{long  }{longitude, numeric}
+\item{lat   }{latitude, numeric}
+\item{order }{specifies the order for each point, integer}
+\item{piece }{"1" for the most essential, "2" and more for detailed points (Öland, Orust, and Tjörn included in "2"), factor}
+\item{group }{Each region or island in the map is a polygon where}
+\item{Region}{id of county, character}
 }
 }
 \usage{
@@ -124,10 +111,7 @@ ggplot2::theme(
   legend.justification = c(0,1),
   plot.margin          = ggplot2::margin(0,0,0,0, unit = "cm")
 )
+
+
 }
-\keyword{county}
-\keyword{kommuner}
-\keyword{landsting}
-\keyword{map}
-\keyword{municipality}
-\keyword{region}
+\keyword{datasets}

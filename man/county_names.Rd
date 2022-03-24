@@ -19,15 +19,13 @@ have been removed from the original data set:
 
 A data frame with 12 rows and 3 variables.
 The negligible variables have been removed from the original data set:
-
 \describe{
 \item{NAME_1}{name of county, character}
 \item{long}{longitude, numeric}
 \item{lat}{latitude, numeric}
 }
 
-A data frame with 311 rows and 3 variables.
-
+A data frame with 311 rows and 3 variables:
 \describe{
 \item{ColumnName}{name of variable, character}
 \item{ValueCode}{ID, character}
@@ -56,7 +54,7 @@ Data set used to translate ID code to name
 # Note that coord_map() is essential for the map to be in actual scale.
 
 ggplot2::ggplot(
-  data = swe_landsting,
+  data = swe_coords_county,
   ggplot2::aes(x=long, y=lat, group = group)
 ) +
 ggplot2::geom_polygon(color = "white", size = 0, fill = "grey")  +
@@ -104,7 +102,7 @@ ggplot2::theme(
 # Note that coord_map() is essential for the map to be in actual scale.
 
 ggplot2::ggplot(
-  data = swe_landsting,
+  data = swe_coords_county,
   ggplot2::aes(x=long, y=lat, group = group)
 ) +
 ggplot2::geom_polygon(
@@ -150,16 +148,19 @@ ggplot2::theme(
   plot.margin          = ggplot2::margin(0,0,0,0, unit = "cm")
 )
 
-region_names <- dplyr::filter(swe_value_labels, ColumnName == "Region") \%>\%
-dplyr::select(Region = ValueCode, RegionName = ValueName)
 
-df <- left_join(
+
+# Example on how to add Region names to coordinates map data
+
+region_names <- dplyr::filter(swe_value_labels, ColumnName == "Region")
+
+region_names <- dplyr::select(region_names, Region = ValueCode, RegionName = ValueName)
+
+df <- dplyr::left_join(
   swe_coords_municipality,
   region_names,
   by = c("Region")
 )
 
 }
-\keyword{county}
-\keyword{landsting}
-\keyword{region}
+\keyword{datasets}
