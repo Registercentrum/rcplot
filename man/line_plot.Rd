@@ -23,6 +23,7 @@ line_plot(
   fill_colors = NULL,
   legend_labels = ggplot2::waiver(),
   label_breaks = ggplot2::waiver(),
+  theme = getOption("theme"),
   legend_row = NULL,
   legend_col = NULL,
   expand = TRUE,
@@ -72,13 +73,15 @@ values below that.}
 
 \item{label_breaks}{Order of the legend keys.}
 
+\item{theme}{Theme to use}
+
 \item{legend_row}{How many rows for the legends.}
 
 \item{legend_col}{How many columns for the legends.}
 
 \item{expand}{If \code{TRUE}, the margins around the data are kept.}
 
-\item{...}{Arguments passed to \code{\link[=theme_slr]{theme_slr()}}}
+\item{...}{Arguments passed to \code{\link[=theme_select]{theme_select()}}}
 }
 \value{
 \preformatted{            Ggplot object containing line-plot.

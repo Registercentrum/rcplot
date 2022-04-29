@@ -26,6 +26,7 @@ bar_plot(
   label_breaks = ggplot2::waiver(),
   legend_row = NULL,
   legend_col = NULL,
+  theme = getOption("theme"),
   expand = FALSE,
   flip = FALSE,
   ...
@@ -80,12 +81,14 @@ values below that.}
 
 \item{legend_col}{How many columns for the legends.}
 
+\item{theme}{Theme to use}
+
 \item{expand}{If \code{TRUE}, the margins around the data are kept.}
 
 \item{flip}{If \code{TRUE}, x and y axis changes positions making
 the bars go horizontally instead of vertically.}
 
-\item{...}{arguments passed to \code{\link[=theme_slr]{theme_slr()}}}
+\item{...}{arguments passed to \code{\link[=theme_select]{theme_select()}}}
 }
 \value{
 \preformatted{              ggplot object containing bar plot.
