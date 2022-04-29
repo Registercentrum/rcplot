@@ -28,6 +28,9 @@
     <loc>/reference/check_attr.html</loc>
   </url>
   <url>
+    <loc>/reference/colors_select.html</loc>
+  </url>
+  <url>
     <loc>/reference/compass.html</loc>
   </url>
   <url>
@@ -55,6 +58,9 @@
     <loc>/reference/line_plot.html</loc>
   </url>
   <url>
+    <loc>/reference/ndr_colors.html</loc>
+  </url>
+  <url>
     <loc>/reference/pain_vas.html</loc>
   </url>
   <url>
@@ -65,6 +71,9 @@
   </url>
   <url>
     <loc>/reference/prom_trends.html</loc>
+  </url>
+  <url>
+    <loc>/reference/rc_colors.html</loc>
   </url>
   <url>
     <loc>/reference/rcsave.html</loc>
@@ -80,6 +89,12 @@
   </url>
   <url>
     <loc>/reference/sweden_map.html</loc>
+  </url>
+  <url>
+    <loc>/reference/theme_rc.html</loc>
+  </url>
+  <url>
+    <loc>/reference/theme_select.html</loc>
   </url>
   <url>
     <loc>/reference/theme_slr.html</loc>
