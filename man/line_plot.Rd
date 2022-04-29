@@ -47,7 +47,7 @@ or \code{color_var}.}
 \item{y_percent}{If \code{TRUE}, y-axis is in percent form. Otherwise in count
 form.}
 
-\item{percent_accuracy}{Set accuracy for \code{\link[scales:label_percent]{scales::percent_format()}}.}
+\item{percent_accuracy}{Set accuracy for \code{\link[scales:percent_format]{scales::percent_format()}}.}
 
 \item{y_lim}{Limit on y-axis.}
 
