@@ -63,11 +63,13 @@
   x_lab <span class="op">=</span> <span class="st">"år"</span>,
   title <span class="op">=</span> <span class="cn">NULL</span>,
   subtitle <span class="op">=</span> <span class="cn">NULL</span>,
-  line_color <span class="op">=</span> <span class="fu"><a href="slr_colors.html">slr_colors</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>,
-  fill_color <span class="op">=</span> <span class="st">"#CADBD5"</span>,
+  line_colors <span class="op">=</span> <span class="cn">NULL</span>,
+  fill_colors <span class="op">=</span> <span class="st">"#CADBD5"</span>,
+  theme <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span>,
   line_size <span class="op">=</span> <span class="fl">1</span>,
   point_size <span class="op">=</span> <span class="fl">1</span>,
-  percent_accuracy <span class="op">=</span> <span class="fl">1</span>
+  percent_accuracy <span class="op">=</span> <span class="fl">1</span>,
+  <span class="va">...</span>
 <span class="op">)</span></code></pre></div>
     </div>
 
@@ -89,16 +91,20 @@
 <dd><p>Plot title, <code>NULL</code> for no title.</p></dd>
 <dt>subtitle</dt>
 <dd><p>Small text under title, <code>NULL</code> for no subtitle.</p></dd>
-<dt>line_color</dt>
+<dt>line_colors</dt>
 <dd><p>Color of the line.</p></dd>
-<dt>fill_color</dt>
+<dt>fill_colors</dt>
 <dd><p>Fill color</p></dd>
+<dt>theme</dt>
+<dd><p>Theme to use, default is <code>getOption("theme")</code></p></dd>
 <dt>line_size</dt>
 <dd><p>Size of the line.</p></dd>
 <dt>point_size</dt>
 <dd><p>Size of the points.</p></dd>
 <dt>percent_accuracy</dt>
 <dd><p>Set accuracy for <code><a href="https://scales.r-lib.org/reference/percent_format.html" class="external-link">scales::percent_format()</a></code>.</p></dd>
+<dt>...</dt>
+<dd><p>Additional arguments passed to <code><a href="theme_select.html">theme_select()</a></code></p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>
