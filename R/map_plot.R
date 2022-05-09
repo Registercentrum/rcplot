@@ -4,10 +4,11 @@
 #'           should be named "geometry" containing map
 #'           coordinates for regions to map.
 #' @param fill_var Variable to use for colouring regions
-#' @param region_var Variable to use label names
+#' @param label_var Variable to use label names
 #'
 #' @return ggplot object with map figure
 #' @example man/examples/map_plot.R
+#' @import sf
 #' @export
 
 map_plot <- function(

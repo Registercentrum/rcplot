@@ -24,7 +24,7 @@ Map coordinates for Sweden counties
 library(sf)
 library(ggplot2)
 ggplot() +
- geom_sf(data = counties, aes(fill = as.numeric(id))) + 
+ geom_sf(data = counties, aes(fill = as.numeric(id))) +
  theme_void()
 
 ggplot() +

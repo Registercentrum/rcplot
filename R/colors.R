@@ -54,7 +54,7 @@ rc_colors <- function(n = 3, type = "default") {
   )
   col <- RColorBrewer::brewer.pal(
     max(n, 3), color_names[[type]])[1:n]
-  return()
+  return(col)
 }
 
 #' Colors used by the SLR color pallette
@@ -66,7 +66,7 @@ rc_colors <- function(n = 3, type = "default") {
 #'
 #' @examples
 #' slr_colors(2) # two colors (not yeallow and blue)
-slr_colors <- function(n = NULL) {
+slr_colors <- function(n = 9) {
   clrs <- c(
     yellow = "#FCC557",
     blue   = "#3E92AA",
@@ -88,7 +88,7 @@ slr_colors <- function(n = NULL) {
       c("yellow", "blue", "black")
     }else if (n == 4){
       c("yellow", "green", "black", "blue")
-    }else if (n <= length(clrs)) { 
+    }else if (n <= length(clrs)) {
       seq_along(clrs)
     }else {
       stop("SLR does not have that many colors!")

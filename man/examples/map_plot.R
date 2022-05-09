@@ -20,10 +20,10 @@ map_plot(
 )
 
 # Plot both municipalities and region outlines
-ggplot() +
-   geom_sf(data = municipalities, aes(fill = as.numeric(id))) +
-   geom_sf(data = counties, fill = NA, color = "red") +
-   theme_void()
+ggplot2::ggplot() +
+  ggplot2::geom_sf(data = municipalities, ggplot2::aes(fill = as.numeric(id))) +
+  ggplot2::geom_sf(data = counties, fill = NA, color = "red") +
+  ggplot2::theme_void()
 
 # Plot municipalities of Västra Götalands Län, with and without labels
 vgregion <- dplyr::filter(municipalities, RegionID == "14")

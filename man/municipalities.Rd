@@ -25,7 +25,7 @@ library(sf)
 library(ggplot2)
 
 ggplot() +
- geom_sf(data = municipalities, aes(fill = as.numeric(id))) + 
+ geom_sf(data = municipalities, aes(fill = as.numeric(id))) +
  theme_void()
 
 ggplot() +
