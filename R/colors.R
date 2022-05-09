@@ -21,8 +21,6 @@ colors_select <- function(n, type = "default", theme_name = getOption("theme")){
   if(is.null(n)){
     n <- 3
   }
-  n_org <- n
-  n <- max(n, 3)
 
   colors <-
     switch(
@@ -31,7 +29,32 @@ colors_select <- function(n, type = "default", theme_name = getOption("theme")){
       slr = slr_colors(n),
       ndr = ndr_colors(n, type)
     )
-  return(colors[1:n_org])
+  return(colors[1:n])
+}
+
+#' Wrapper for RColorBrewer to get colors
+#'
+#' @param n number of colors
+#' @param type one of
+#'       `"default"`, for standard colors.
+#'       `"Spectral"`, scale.
+#'       `"Paired"` for pairwise colors.
+#'
+#' @return vector with color codes
+#' @export
+#'
+#' @examples
+#' rc_colors(2)
+rc_colors <- function(n = 3, type = "default") {
+
+  color_names <- list(
+    default = "Set3",
+    Spectral = "Spectral",
+    Paired = "Paired"
+  )
+  col <- RColorBrewer::brewer.pal(
+    max(n, 3), color_names[[type]])[1:n]
+  return()
 }
 
 #' Colors used by the SLR color pallette
@@ -57,38 +80,21 @@ slr_colors <- function(n = NULL) {
   )
 
   choose <-
-    if      (is.null(n) || n <= 1) c("blue")
-  else if (n == 2)               c("yellow", "blue")
-  else if (n == 3)               c("yellow", "blue", "black")
-  else if (n == 4)               c("yellow", "green", "black", "blue")
-  else if (n <= length(clrs))    seq_along(clrs)
-  else stop("SLR does not have that many colors!")
+    if(is.null(n) || n <= 1) {
+      c("blue")
+    }else if (n == 2){
+      c("yellow", "blue")
+    }else if (n == 3){
+      c("yellow", "blue", "black")
+    }else if (n == 4){
+      c("yellow", "green", "black", "blue")
+    }else if (n <= length(clrs)) { 
+      seq_along(clrs)
+    }else {
+      stop("SLR does not have that many colors!")
+    }
 
   unname(clrs[choose])
-}
-
-#' Wrapper for RColorBrewer to get colors
-#'
-#' @param n number of colors
-#' @param type one of
-#'       `"default"`, for standard colors.
-#'       `"Spectral"`, scale.
-#'       `"Paired"` for pairwise colors.
-#'
-#' @return vector with color codes
-#' @export
-#'
-#' @examples
-#' rc_colors(2)
-rc_colors <- function(n = 3, type = "default") {
-
-  color_names <- list(
-    default = "Set3",
-    Spectral = "Spectral",
-    Paired = "Paired"
-  )
-
-  RColorBrewer::brewer.pal(n, color_names[[type]])
 }
 
 #' NDR color palette
