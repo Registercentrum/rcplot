@@ -34,7 +34,7 @@
     <loc>/reference/compass.html</loc>
   </url>
   <url>
-    <loc>/reference/county_names.html</loc>
+    <loc>/reference/counties.html</loc>
   </url>
   <url>
     <loc>/reference/eq_vas.html</loc>
@@ -56,6 +56,12 @@
   </url>
   <url>
     <loc>/reference/line_plot.html</loc>
+  </url>
+  <url>
+    <loc>/reference/map_plot.html</loc>
+  </url>
+  <url>
+    <loc>/reference/municipalities.html</loc>
   </url>
   <url>
     <loc>/reference/ndr_colors.html</loc>
@@ -86,9 +92,6 @@
   </url>
   <url>
     <loc>/reference/slr_colors.html</loc>
-  </url>
-  <url>
-    <loc>/reference/sweden_map.html</loc>
   </url>
   <url>
     <loc>/reference/theme_rc.html</loc>
