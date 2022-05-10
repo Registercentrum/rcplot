@@ -7,6 +7,9 @@
 #' @param label_var Variable to use label names
 #' @param fill_colors Manually set colors
 #' @param legend_labels Manually set labels, character vector.
+#' @param legend_breaks Manually set legend breaks
+#' @param legend_row Number of rows in legend
+#' @param legend_col Number of cols in legend
 #'
 #' @return ggplot object with map figure
 #' @example man/examples/map_plot.R
