@@ -50,7 +50,16 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">map_plot</span><span class="op">(</span><span class="va">df</span>, fill_var <span class="op">=</span> <span class="st">"id"</span>, label_var <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">map_plot</span><span class="op">(</span>
+  <span class="va">df</span>,
+  fill_var <span class="op">=</span> <span class="st">"id"</span>,
+  label_var <span class="op">=</span> <span class="cn">NULL</span>,
+  fill_colors <span class="op">=</span> <span class="cn">NULL</span>,
+  legend_labels <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/waiver.html" class="external-link">waiver</a></span><span class="op">(</span><span class="op">)</span>,
+  label_breaks <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/waiver.html" class="external-link">waiver</a></span><span class="op">(</span><span class="op">)</span>,
+  legend_row <span class="op">=</span> <span class="cn">NULL</span>,
+  legend_col <span class="op">=</span> <span class="cn">NULL</span>
+<span class="op">)</span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -63,6 +72,16 @@ coordinates for regions to map.</p></dd>
 <dd><p>Variable to use for colouring regions</p></dd>
 <dt>label_var</dt>
 <dd><p>Variable to use label names</p></dd>
+<dt>fill_colors</dt>
+<dd><p>Manually set colors</p></dd>
+<dt>legend_labels</dt>
+<dd><p>Manually set labels, character vector.</p></dd>
+<dt>label_breaks</dt>
+<dd><p>Manually set legend breaks</p></dd>
+<dt>legend_row</dt>
+<dd><p>Number of rows in legend</p></dd>
+<dt>legend_col</dt>
+<dd><p>Number of cols in legend</p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>
@@ -76,23 +95,32 @@ coordinates for regions to map.</p></dd>
 <span class="r-in"><span class="va">municip_coords</span> <span class="op">&lt;-</span> <span class="va">municipalities</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Map with labels</span></span>
+<span class="r-in"><span class="va">data</span> <span class="op">&lt;-</span> <span class="va">region_coords</span> <span class="op"><a href="pipe.html">%&gt;%</a></span></span>
+<span class="r-in">  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
+<span class="r-in">    labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">id</span>, <span class="st">" - "</span>, <span class="va">Name</span><span class="op">)</span></span>
+<span class="r-in">  <span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="fu">map_plot</span><span class="op">(</span></span>
-<span class="r-in">  df <span class="op">=</span> <span class="va">region_coords</span>,</span>
-<span class="r-in">  fill_var <span class="op">=</span> <span class="st">"id"</span>,</span>
-<span class="r-in">  label_var <span class="op">=</span> <span class="st">"Name"</span></span>
+<span class="r-in">  df <span class="op">=</span> <span class="va">data</span>,</span>
+<span class="r-in">  fill_var <span class="op">=</span> <span class="st">"labels"</span>,</span>
+<span class="r-in">  label_var <span class="op">=</span> <span class="st">"id"</span>,</span>
+<span class="r-in">  fill_colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html" class="external-link">brewer.pal</a></span><span class="op">(</span><span class="fl">12</span>, <span class="st">"Set3"</span><span class="op">)</span>,</span>
+<span class="r-in">                  <span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html" class="external-link">brewer.pal</a></span><span class="op">(</span><span class="fl">9</span>, <span class="st">"Spectral"</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">)</span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>st_point_on_surface may not give correct results for longitude/latitude data</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>position_dodge requires non-overlapping x intervals</span>
 <span class="r-plt img"><img src="map_plot-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Add some "interresting" data to coordinate dataset and plot</span></span>
-<span class="r-in"><span class="va">region_coords</span><span class="op">[[</span><span class="st">"var"</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Bäst"</span>, <span class="st">"Bra"</span>, <span class="st">"Dålig"</span>, <span class="st">"Sämst"</span><span class="op">)</span>,</span>
-<span class="r-in">                                 size <span class="op">=</span> <span class="fl">21</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-in"><span class="va">region_coords</span><span class="op">[[</span><span class="st">"var"</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Sämst"</span>, <span class="st">"Dålig"</span>, <span class="st">"Bra"</span>, <span class="st">"Bäst"</span><span class="op">)</span>,</span>
+<span class="r-in">                                 size <span class="op">=</span> <span class="fl">21</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span class="r-in">                                 ordered <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span class="r-in">                                 levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Sämst"</span>, <span class="st">"Dålig"</span>, <span class="st">"Bra"</span>, <span class="st">"Bäst"</span><span class="op">)</span></span>
+<span class="r-in">                                 <span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="fu">map_plot</span><span class="op">(</span></span>
 <span class="r-in">  df <span class="op">=</span> <span class="va">region_coords</span>,</span>
-<span class="r-in">  fill_var <span class="op">=</span> <span class="st">"var"</span></span>
+<span class="r-in">  fill_var <span class="op">=</span> <span class="st">"var"</span>,</span>
+<span class="r-in">  fill_colors <span class="op">=</span> <span class="fu"><a href="colors_select.html">rc_colors</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">4</span>, type <span class="op">=</span> <span class="st">"RYG"</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">)</span></span>
 <span class="r-plt img"><img src="map_plot-2.png" alt="" width="700" height="433"></span>
 <span class="r-in"></span>
@@ -120,7 +148,6 @@ coordinates for regions to map.</p></dd>
 <span class="r-in">  label_var <span class="op">=</span> <span class="st">"Name"</span></span>
 <span class="r-in"><span class="op">)</span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>st_point_on_surface may not give correct results for longitude/latitude data</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>position_dodge requires non-overlapping x intervals</span>
 <span class="r-plt img"><img src="map_plot-5.png" alt="" width="700" height="433"></span>
 <span class="r-in"></span>
 <span class="r-in"></span>

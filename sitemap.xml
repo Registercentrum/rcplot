@@ -13,19 +13,10 @@
     <loc>/index.html</loc>
   </url>
   <url>
-    <loc>/reference/add_attr.html</loc>
-  </url>
-  <url>
     <loc>/reference/age_pyramid.html</loc>
   </url>
   <url>
-    <loc>/reference/attr_to_factor.html</loc>
-  </url>
-  <url>
     <loc>/reference/bar_plot.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_attr.html</loc>
   </url>
   <url>
     <loc>/reference/colors_select.html</loc>
@@ -34,16 +25,7 @@
     <loc>/reference/compass.html</loc>
   </url>
   <url>
-    <loc>/reference/counties.html</loc>
-  </url>
-  <url>
     <loc>/reference/eq_vas.html</loc>
-  </url>
-  <url>
-    <loc>/reference/guide_axis_label_trans.html</loc>
-  </url>
-  <url>
-    <loc>/reference/guide_train.guide_axis_trans.html</loc>
   </url>
   <url>
     <loc>/reference/horisontal_bar_plot.html</loc>
@@ -61,16 +43,7 @@
     <loc>/reference/map_plot.html</loc>
   </url>
   <url>
-    <loc>/reference/municipalities.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ndr_colors.html</loc>
-  </url>
-  <url>
     <loc>/reference/pain_vas.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pick_valid.html</loc>
   </url>
   <url>
     <loc>/reference/pipe.html</loc>
@@ -79,28 +52,16 @@
     <loc>/reference/prom_trends.html</loc>
   </url>
   <url>
-    <loc>/reference/rc_colors.html</loc>
+    <loc>/reference/rcsave.html</loc>
   </url>
   <url>
-    <loc>/reference/rcsave.html</loc>
+    <loc>/reference/registercentrum_themes.html</loc>
   </url>
   <url>
     <loc>/reference/satisfaction_vas.html</loc>
   </url>
   <url>
-    <loc>/reference/size_order.html</loc>
-  </url>
-  <url>
-    <loc>/reference/slr_colors.html</loc>
-  </url>
-  <url>
-    <loc>/reference/theme_rc.html</loc>
-  </url>
-  <url>
-    <loc>/reference/theme_select.html</loc>
-  </url>
-  <url>
-    <loc>/reference/theme_slr.html</loc>
+    <loc>/reference/sweden_coordinates.html</loc>
   </url>
   <url>
     <loc>/reference/tidyeval.html</loc>
