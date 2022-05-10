@@ -12,7 +12,6 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: Checkout repo
       - uses: actions/checkout@v2
 
       - uses: r-lib/actions/setup-pandoc@v2
