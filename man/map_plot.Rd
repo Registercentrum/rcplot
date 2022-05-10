@@ -27,6 +27,12 @@ coordinates for regions to map.}
 \item{fill_colors}{Manually set colors}
 
 \item{legend_labels}{Manually set labels, character vector.}
+
+\item{label_breaks}{Manually set legend breaks}
+
+\item{legend_row}{Number of rows in legend}
+
+\item{legend_col}{Number of cols in legend}
 }
 \value{
 ggplot object with map figure
