@@ -55,12 +55,12 @@ bar_plot(df = ggplot2::diamonds, x_var = 'color',
 
 ``` r
 # KM-plot with 2 levels
-survfit_obj <-
-  survival::survfit(survival::Surv(time/365.24, status) ~ sex,
-                    data = survival::colon
-  )
-km_plot(survfit_obj, y_lim = c(40,100), y_breaks = 10, x_lim = c(0,9))
-#> Warning: Removed 1264 row(s) containing missing values (geom_path).
+survfit_obj <- survival::survfit(
+  survival::Surv(time/365.24, status) ~ sex,
+  data = survival::colon
+)
+
+km_plot(survfit_obj, y_lim = c(0,100), y_breaks = 10, x_lim = c(0,9))
 ```
 
 <img src="man/figures/README-example-3.png" width="100%" />
@@ -73,11 +73,11 @@ line_plot(df = ggplot2::diamonds, x_var = 'cut', color_var = 'color', y_breaks =
 <img src="man/figures/README-example-4.png" width="100%" />
 
 ``` r
-# Map
+# Map figure of Counties, Sweden
 region_coords <- rcplot::counties
 region_coords[["var"]] <- factor(
   sample(c("Sämst", "Dålig", "Bra", "Bäst"),
-         size = 21, replace = TRUE),
+         size = nrow(region_coords), replace = TRUE),
   ordered = TRUE,
   levels = c("Sämst", "Dålig", "Bra", "Bäst")
 )
@@ -92,14 +92,20 @@ map_plot(
 <img src="man/figures/README-example-5.png" width="100%" />
 
 ``` r
+# Map figure of Västra Götalandsregionen
 vgregion <- dplyr::filter(rcplot::municipalities, RegionID == "14")
 
-vgregion[["var"]] <- sample(c("Bäst", "Bra", "Dålig", "Sämst"),
-                            size = nrow(vgregion), replace = TRUE)
+vgregion[["var"]] <- factor(
+  sample(c("Sämst", "Dålig", "Bra", "Bäst"),
+         size = nrow(vgregion), replace = TRUE),
+  ordered = TRUE,
+  levels = c("Sämst", "Dålig", "Bra", "Bäst")
+)
 
 map_plot(
   df = vgregion,
-  fill_var = "var"
+  fill_var = "var",
+  fill_colors = rc_colors(n = 4, type = "RYG")
 )
 ```
 
