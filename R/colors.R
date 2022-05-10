@@ -7,6 +7,7 @@
 #' @return a vector with color codes (HEX)
 #' @export
 #'
+#' @rdname colors_select
 #' @examples
 #' colors_select(3, "default", "rc")
 
@@ -43,6 +44,7 @@ colors_select <- function(n, type = "default", theme_name = getOption("theme")){
 #' @return vector with color codes
 #' @export
 #'
+#' @rdname colors_select
 #' @examples
 #' rc_colors(2)
 rc_colors <- function(n = 3, type = "default") {
@@ -64,6 +66,7 @@ rc_colors <- function(n = 3, type = "default") {
 #' @return vector with color codes
 #' @export
 #'
+#' @rdname colors_select
 #' @examples
 #' slr_colors(2) # two colors (not yeallow and blue)
 slr_colors <- function(n = 9) {
@@ -109,6 +112,7 @@ slr_colors <- function(n = 9) {
 #' @return vector with color codes
 #' @export
 #'
+#' @rdname colors_select
 #' @examples
 #' ndr_colors(2)
 ndr_colors <- function(n = 8, type = NULL){
@@ -142,12 +146,6 @@ ndr_colors <- function(n = 8, type = NULL){
       if(n == 7)   palet <- palet[c(2, 1, 7, 10, 5,  8, 9)]
       return(palet)
 
-      # palet <- palet[c(10, 2, 1, 11, 8, 9, 12)]
-      # # Take colors from the "sides"
-      # # if n is odd, add the middle element.
-      # # if n is even - skip yellow color.
-      # return(c(palet[1:floor(n/2)], palet[(n%%2==1)*ceiling(length(palet)/2)],
-      #          palet[ceiling(length(palet)+1 - n/2):length(palet)]))
     }
 
   }
