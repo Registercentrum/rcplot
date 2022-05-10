@@ -37,7 +37,7 @@ colors_select <- function(n, type = "default", theme_name = getOption("theme")){
 #' @param n number of colors
 #' @param type one of
 #'       `"default"`, for standard colors.
-#'       `"Spectral"`, scale.
+#'       `"RYG"`, for red-yellow-green scale.
 #'       `"Paired"` for pairwise colors.
 #'
 #' @return vector with color codes
@@ -49,7 +49,7 @@ rc_colors <- function(n = 3, type = "default") {
 
   color_names <- list(
     default = "Set3",
-    Spectral = "Spectral",
+    RYG = "RdYlGn",
     Paired = "Paired"
   )
   col <- RColorBrewer::brewer.pal(

@@ -11,7 +11,7 @@ rc_colors(n = 3, type = "default")
 
 \item{type}{one of
 \code{"default"}, for standard colors.
-\code{"Spectral"}, scale.
+\code{"RYG"}, for red-yellow-green scale.
 \code{"Paired"} for pairwise colors.}
 }
 \value{
