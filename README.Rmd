@@ -92,4 +92,3 @@ map_plot(
   fill_colors = rc_colors(n = 4, type = "RYG")
 )
 ```
-
